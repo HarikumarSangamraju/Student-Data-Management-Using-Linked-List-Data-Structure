@@ -214,5 +214,5 @@ This human-readable format makes it easy to inspect, back up, or edit the data o
 
 ## Connect With Me
 
-- GitHub: [your-github-link-here](https://github.com/your-username)
-- LinkedIn: [your-linkedin-link-here](https://linkedin.com/in/your-profile)
+-GitHub: (https://github.com/HarikumarSangamraju)
+- LinkedIn: [your-linkedin-link-here]([)
