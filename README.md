@@ -85,3 +85,7 @@ Example:
   longer names will overflow.
 - Input is read with `scanf`, so names containing spaces are not supported.
 - No input validation on numeric fields (e.g. negative marks are accepted).
+
+## License
+
+See [LICENSE](LICENSE).
