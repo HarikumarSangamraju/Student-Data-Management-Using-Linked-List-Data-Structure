@@ -47,21 +47,19 @@ The codebase is split into small, single-responsibility source files (one functi
 
 ```
 .
-â”œâ”€â”€ Makefile          # Build configuration
-â”œâ”€â”€ student.h         # Struct definition + function prototypes
-â”œâ”€â”€ main.c            # Entry point, menu loop, exit_list(), count()
-â”œâ”€â”€ stud_load.c       # load_list()     â€” loads student.data on startup
-â”œâ”€â”€ stud_add.c        # add_new()       â€” inserts a new record
-â”œâ”€â”€ stud_show.c       # show_list()     â€” displays all records
-â”œâ”€â”€ stud_del.c        # delete_a_node() â€” deletes one record
-â”œâ”€â”€ stud_mod.c        # modify()        â€” edits an existing record
-â”œâ”€â”€ stud_sort.c       # sort_list()     â€” sorts by name/marks
-â”œâ”€â”€ stud_reverse.c    # reverse_list()  â€” reverses the list
-â”œâ”€â”€ stud_deleteall.c  # delete_all()    â€” clears the list
-â”œâ”€â”€ stud_save.c       # save()          â€” writes list to disk
-â”œâ”€â”€ README.md
-â”œâ”€â”€ LICENSE
-â””â”€â”€ .gitignore
+Makefile          # Build configuration
+student.h         # Struct definition + function prototypes
+main.c            # Entry point, menu loop, exit_list(), count()
+stud_load.c       # load_list()     loads student.data on startup
+stud_add.c        # add_new()       inserts a new record
+stud_show.c       # show_list()     displays all records
+stud_del.c        # delete_a_node() deletes one record
+stud_mod.c        # modify()        edits an existing record
+stud_sort.c       # sort_list()     sorts by name/marks
+stud_reverse.c    # reverse_list()  reverses the list
+stud_deleteall.c  # delete_all()    clears the list
+stud_save.c       # save()          writes list to disk
+README.md
 ```
 
 Every `.c` file includes `student.h`, which centralizes the shared `sll` (singly linked list) struct and all function prototypes â€” this is the single source of truth for the module's public interface.
