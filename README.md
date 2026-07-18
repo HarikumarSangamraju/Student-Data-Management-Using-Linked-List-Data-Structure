@@ -1,10 +1,10 @@
-# ðŸŽ“ Student Record Management System
+# Student Record Management System
 
 A **menu-driven, C command-line application** for managing student records â€” built on a singly linked list, with file-based persistence and a clean, modular codebase.
 
 ---
 
-## ðŸ“– Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Features](#-features)
@@ -20,7 +20,7 @@ A **menu-driven, C command-line application** for managing student records â€
 
 ---
 
-## ðŸ§­ Overview
+## Overview
 
 This project implements a **Student Record Management System** entirely in C, without any external libraries or database engine. Records â€” roll number, name, and marks â€” are stored in a **singly linked list** in memory during runtime, and can be saved to / loaded from a flat file (`student.data`) so data survives across program runs.
 
@@ -28,37 +28,37 @@ The codebase is split into small, single-responsibility source files (one functi
 
 ---
 
-## âœ¨ Features
+## Features
 
-- âž• **Add** a new student record
-- ðŸ“‹ **Show** all records in tabular form
-- âœï¸ **Modify** a record â€” search by roll number, name, or marks
-- âŒ **Delete** a single record by roll number or name
-- ðŸ§¹ **Delete all** records at once
-- ðŸ”ƒ **Sort** the list by name or by marks (bubble sort)
-- ðŸ”„ **Reverse** the entire list
-- ðŸ’¾ **Save** records to disk on demand
-- ðŸ“‚ **Auto-load** saved records on startup
-- ðŸšª **Exit** with an explicit choice to save or discard changes
+- **Add** a new student record
+- **Show** all records in tabular form
+- **Modify** a record â€” search by roll number, name, or marks
+- **Delete** a single record by roll number or name
+- **Delete all** records at once
+- **Sort** the list by name or by marks (bubble sort)
+- **Reverse** the entire list
+- **Save** records to disk on demand
+- **Auto-load** saved records on startup
+- **Exit** with an explicit choice to save or discard changes
 
 ---
 
-## ðŸ—‚ Project Structure
+## Project Structure
 
 ```
 .
-â”œâ”€â”€ Makefile              # Build configuration
-â”œâ”€â”€ student.h             # Struct definition + function prototypes
-â”œâ”€â”€ main.c                # Entry point, menu loop, exit_list(), count()
-â”œâ”€â”€ stud_load.c           # load_list()     â€” loads student.data on startup
-â”œâ”€â”€ stud_add.c            # add_new()       â€” inserts a new record
-â”œâ”€â”€ stud_show.c           # show_list()     â€” displays all records
-â”œâ”€â”€ stud_del.c            # delete_a_node() â€” deletes one record
-â”œâ”€â”€ stud_mod.c            # modify()        â€” edits an existing record
-â”œâ”€â”€ stud_sort.c           # sort_list()     â€” sorts by name/marks
-â”œâ”€â”€ stud_reverse.c        # reverse_list()  â€” reverses the list
-â”œâ”€â”€ stud_deleteall.c      # delete_all()    â€” clears the list
-â”œâ”€â”€ stud_save.c           # save()          â€” writes list to disk
+â”œâ”€â”€ Makefile          # Build configuration
+â”œâ”€â”€ student.h         # Struct definition + function prototypes
+â”œâ”€â”€ main.c            # Entry point, menu loop, exit_list(), count()
+â”œâ”€â”€ stud_load.c       # load_list()     â€” loads student.data on startup
+â”œâ”€â”€ stud_add.c        # add_new()       â€” inserts a new record
+â”œâ”€â”€ stud_show.c       # show_list()     â€” displays all records
+â”œâ”€â”€ stud_del.c        # delete_a_node() â€” deletes one record
+â”œâ”€â”€ stud_mod.c        # modify()        â€” edits an existing record
+â”œâ”€â”€ stud_sort.c       # sort_list()     â€” sorts by name/marks
+â”œâ”€â”€ stud_reverse.c    # reverse_list()  â€” reverses the list
+â”œâ”€â”€ stud_deleteall.c  # delete_all()    â€” clears the list
+â”œâ”€â”€ stud_save.c       # save()          â€” writes list to disk
 â”œâ”€â”€ README.md
 â”œâ”€â”€ LICENSE
 â””â”€â”€ .gitignore
@@ -68,16 +68,16 @@ Every `.c` file includes `student.h`, which centralizes the shared `sll` (singly
 
 ---
 
-## ðŸ§¬ Data Model
+## Data Model
 
 Each student record is represented as a node:
 
 ```c
 typedef struct stu {
-    int   roll;         // Unique roll number
-    char  name[20];      // Student name (max 19 chars + null terminator)
-    float marks;         // Marks / score
-    struct stu *nxt;      // Pointer to the next node
+    int   roll;       // Unique roll number
+    char  name[20];   // Student name (max 19 chars + null terminator)
+    float marks;      // Marks / score
+    struct stu *nxt;  // Pointer to the next node
 } sll;
 ```
 
@@ -85,7 +85,7 @@ The list is referenced through a single head pointer (`sll *hptr`), initialized 
 
 ---
 
-## ðŸ— Design Decisions
+## Design Decisions
 
 This section documents the *intentional* behavior baked into the system â€” useful context for anyone reading or extending the code.
 
@@ -121,7 +121,7 @@ Rather than one large `main.c`, each menu action lives in its own translation un
 
 ---
 
-## âš™ï¸ Build Instructions
+## Build Instructions
 
 **Requirements:** `gcc` and `make` (Linux/macOS/WSL recommended).
 
@@ -140,7 +140,7 @@ make clean
 
 ---
 
-## â–¶ï¸ Usage
+## Usage
 
 ```bash
 ./student_record
@@ -166,23 +166,23 @@ ________________________________
 
 ---
 
-## ðŸ“‹ Menu Reference
+## Menu Reference
 
-| Key     | Action                                                        |
+| Key | Action |
 |---------|----------------------------------------------------------------|
 | `a`/`A` | Add a new student record (name + marks; roll is auto-assigned) |
-| `d`/`D` | Delete a record by roll number or name                        |
-| `s`/`S` | Show all records in a table                                   |
-| `m`/`M` | Modify a record (search by roll, name, or marks)              |
-| `v`/`V` | Save the current list to `student.data`                       |
-| `e`/`E` | Exit â€” choose "Save & Exit" or "Exit without saving"          |
-| `t`/`T` | Sort the list by name or by marks                             |
-| `b`/`B` | Delete all records                                            |
-| `r`/`R` | Reverse the order of the list                                 |
+| `d`/`D` | Delete a record by roll number or name |
+| `s`/`S` | Show all records in a table |
+| `m`/`M` | Modify a record (search by roll, name, or marks) |
+| `v`/`V` | Save the current list to `student.data` |
+| `e`/`E` | Exit â€” choose "Save & Exit" or "Exit without saving" |
+| `t`/`T` | Sort the list by name or by marks |
+| `b`/`B` | Delete all records |
+| `r`/`R` | Reverse the order of the list |
 
 ---
 
-## ðŸ’¾ Persistence Format
+## Persistence Format
 
 Records are stored as **plain text**, one record per line, in `student.data`:
 
@@ -202,7 +202,7 @@ This human-readable format makes it easy to inspect, back up, or edit the data o
 
 ---
 
-## ðŸš€ Possible Improvements
+## Possible Improvements
 
 - Switch to `fgets` + parsing for names containing spaces.
 - Add input validation (marks range, non-empty names).
@@ -212,7 +212,7 @@ This human-readable format makes it easy to inspect, back up, or edit the data o
 
 ---
 
-## ðŸ”— Connect With Me
+## Connect With Me
 
-- ðŸ’» GitHub: [your-github-link-here](https://github.com/your-username)
-- ðŸ’¼ LinkedIn: [your-linkedin-link-here](https://linkedin.com/in/your-profile)
+- GitHub: [your-github-link-here](https://github.com/your-username)
+- LinkedIn: [your-linkedin-link-here](https://linkedin.com/in/your-profile)
