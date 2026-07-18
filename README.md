@@ -215,4 +215,4 @@ This human-readable format makes it easy to inspect, back up, or edit the data o
 ## Connect With Me
 
 -GitHub: (https://github.com/HarikumarSangamraju)
-- LinkedIn: [your-linkedin-link-here]([)
+- LinkedIn: [https://www.linkedin.com/in/hari-kumar-66b6382bb?utm_source=share_via&utm_content=profile&utm_medium=member_android]([)
